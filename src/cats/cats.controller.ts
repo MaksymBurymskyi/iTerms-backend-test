@@ -12,6 +12,11 @@ export class CatsController {
     await this.catsService.create(createCatDto);
   }
 
+  @Get('/faker/generate')
+  async generate() {
+    return this.catsService.generate();
+  }
+
   @Get()
   async findAll(): Promise<Cat[]> {
     return this.catsService.findAll();
